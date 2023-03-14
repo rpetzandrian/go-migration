@@ -14,6 +14,7 @@ import (
 const (
 	COMMAND_UP   = "up"
 	COMMAND_DOWN = "down"
+	STEP_DEFAULT = -1
 )
 
 func main() {
@@ -40,7 +41,7 @@ func main() {
 			log.Fatal(err)
 		}
 	} else if command == COMMAND_DOWN {
-		if err := m.Down(); err != nil {
+		if err := m.Steps(STEP_DEFAULT); err != nil {
 			log.Fatal(err)
 		}
 	}
